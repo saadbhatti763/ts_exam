@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t ml-model .'
+                sh 'docker build -t ml-model ./src'
             }
         }
         stage('Deploy with Terraform') {
