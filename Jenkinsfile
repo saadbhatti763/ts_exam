@@ -10,7 +10,7 @@ pipeline {
         // Clone the Git Repository
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/saadbhatti763/ts_exam.git'  // Replace with your repository URL
+                git 'https://github.com/saadbhatti763/ts_exam'  // Replace with your repository URL
             }
         }
 
