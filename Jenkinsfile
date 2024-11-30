@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "ml-model"  // Name for your Docker image
-        CONTAINER_NAME = "ml-model-container"  // Name for your container
+        DOCKER_IMAGE = "ml-model"
+        CONTAINER_NAME = "ml-model-container"
     }
 
     stages {
         // Clone the Git Repository
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/saadbhatti763/ts_exam.git'  // Replace with your repository URL
+                git 'https://github.com/saadbhatti763/ts_exam.git'
             }
         }
 
