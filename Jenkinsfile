@@ -10,7 +10,7 @@ pipeline {
         // Clone the Git Repository
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/saadbhatti763/ts_exam.git'
+                git branch: 'main', url: 'https://github.com/saadbhatti763/ts_exam.git'
             }
         }
 
