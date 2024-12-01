@@ -39,7 +39,7 @@ pipeline {
                 // Adding a sleep to allow container startup
                 sh '''
                 sleep 10  # Wait for the container to start
-                curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d '{"feature": [2]}'
+                curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d '{"features": [2]}'
                 '''
             }
         }
