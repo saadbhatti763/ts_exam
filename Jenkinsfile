@@ -17,7 +17,8 @@ pipeline {
         // Build the Docker Image
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE ./src'
+                // Ensure the Dockerfile and app.py are in the correct directory
+                sh 'docker build -t $DOCKER_IMAGE ./src'  // Adjust path if needed
             }
         }
 
@@ -35,9 +36,10 @@ pipeline {
         // Test the Deployment
         stage('Test Deployment') {
             steps {
+                // Adding a sleep to allow container startup
                 sh '''
                 sleep 10  # Wait for the container to start
-                curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d '{"features": [1, 2, 3]}'
+                curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d '{"feature": [2]}'
                 '''
             }
         }
@@ -55,5 +57,4 @@ pipeline {
         }
     }
 }
-
 

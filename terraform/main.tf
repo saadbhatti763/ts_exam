@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     docker = {
@@ -27,4 +26,3 @@ resource "docker_container" "ml_model_container" {
     external = 5000
   }
 }
-
